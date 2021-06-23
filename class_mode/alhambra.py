@@ -100,10 +100,6 @@ class Alhambra(Sketch):
         self.end_shape(self.CLOSE)
         self.draw_hexagon(x0 - 4, y0, sz * 0.22, 0)
 
-
-
-
-
     def render(self):
         """
         Tesselate the wavy triangles, add some star in the spaces
