@@ -23,6 +23,10 @@ def adjust_bezier(bzpoint, theta, disp):
     """
     bzpoint.add(TPoint(cos(theta)*disp, sin(theta)*disp))
 
+def ystep(x):
+    return x * 50 * sqrt(3)
+
+
 class Alhambra(Sketch):
     def settings(self):
         self.size(1280, 906)
@@ -30,7 +34,7 @@ class Alhambra(Sketch):
     def setup(self):
         global colors, x_values, y_values
         x_values = [100, 300, 500, 700, 900, 1100, 1300, 1500]
-        y_values = [50 * sqrt(3), 150 * sqrt(3), 250 * sqrt(3), 350 * sqrt(3), 450 * sqrt(3), 550 * sqrt(3)]
+        y_values = list(map(ystep, (1, 3, 5, 7, 9, 11)))
         colors = [
            self.color(151, 84, 5),
            self.color(33, 3, 3),
