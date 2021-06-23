@@ -9,3 +9,5 @@ Particular irritations:-
 3. PVector is a mess, overloading Vec2D and Vec3D functionality (I'm happy with my java extensions here).
 4. Processing4 is even more patched up than earlier versions, dead code and MacOS fixes abound.
 5. Inner classes are mixed blessing (fortunately there's a meta-programming workaround for ruby-processing).
+
+I'm not sure p5 static mode is good idea, apart from being terse, python mode should be pythonic. 
