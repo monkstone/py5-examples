@@ -2,7 +2,7 @@
 
 #### Experiments with py5 (by a rubyist)
 
-### Here I will document my py5 experiences
+Here I will document my py5 experiences
 
 #### Warning my python is very rusty
 
