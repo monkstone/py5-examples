@@ -1,4 +1,5 @@
 from py5 import Sketch
+import numpy as np
 
 """
 alhambra.py by Martin Prout
@@ -23,9 +24,7 @@ def adjust_bezier(bzpoint, theta, disp):
     """
     bzpoint.add(TPoint(cos(theta)*disp, sin(theta)*disp))
 
-def ystep(x):
-    return x * 50 * sqrt(3)
-
+odd = lambda num: np.arange(1,num*2+1,2)
 
 class Alhambra(Sketch):
     def settings(self):
@@ -33,8 +32,9 @@ class Alhambra(Sketch):
 
     def setup(self):
         global colors, x_values, y_values
-        x_values = [100, 300, 500, 700, 900, 1100, 1300, 1500]
-        y_values = list(map(ystep, (1, 3, 5, 7, 9, 11)))
+        x_values = np.multiply(100, odd(8))
+        factor = 50 * sqrt(3)
+        y_values = np.multiply(factor, odd(6))
         colors = [
            self.color(151, 84, 5),
            self.color(33, 3, 3),
@@ -108,8 +108,8 @@ class Alhambra(Sketch):
         """
         Tesselate the wavy triangles, add some star in the spaces
         """
-        for column in range(len(x_values)):
-            for row in range(len(y_values)):
+        for column in range(8):
+            for row in range(6):
                 if (row % 2 == 0):
                     self.draw_triangle(x_values[column], y_values[row], 200, colors[(1 + column)%5], 0.32)
                     self.draw_star(x_values[column] - 95, y_values[row] + 60, 70, colors[(2 + column)%5])

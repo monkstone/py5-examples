@@ -1,9 +1,8 @@
 ### How rule WM686 can be used as a circle growth algorithm ###
 ### doc --> https://www.wolframphysics.org/universes/wm686/ ###
 
-import py5_tools
 import py5
-import random
+
 VerletPhysics2D = py5.JClass('toxi.physics2d.VerletPhysics2D')
 VerletParticle2D = py5.JClass('toxi.physics2d.VerletParticle2D')
 VerletSpring2D = py5.JClass('toxi.physics2d.VerletSpring2D')
