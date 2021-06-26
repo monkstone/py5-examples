@@ -17,6 +17,7 @@ GREEN = 2
 BLUE = 3
 RED = 4
 WHITE = 5
+SQRT3 = sqrt(3)
 
 def adjust_bezier(bzpoint, theta, disp):
     """
@@ -33,7 +34,7 @@ class Alhambra(Sketch):
     def setup(self):
         global colors, x_values, y_values
         x_values = np.multiply(100, odd(8))
-        factor = 50 * sqrt(3)
+        factor = 50 * SQRT3
         y_values = np.multiply(factor, odd(6))
         colors = [
            self.color(151, 84, 5),
@@ -52,8 +53,8 @@ class Alhambra(Sketch):
         """
         self.no_stroke()
         self.fill(col)
-        self.triangle(xpos + sz/sqrt(3), ypos, xpos - (sqrt(3)*sz)/6, ypos - 0.5 * sz, xpos - (sqrt(3)*sz)/6, ypos + 0.5 * sz)
-        self.triangle(xpos - sz/sqrt(3), ypos, xpos + (sqrt(3)*sz)/6, ypos - 0.5 * sz, xpos + (sqrt(3)*sz)/6, ypos + 0.5 * sz)
+        self.triangle(xpos + sz/SQRT3, ypos, xpos - (SQRT3*sz)/6, ypos - 0.5 * sz, xpos - (SQRT3*sz)/6, ypos + 0.5 * sz)
+        self.triangle(xpos - sz/SQRT3, ypos, xpos + (SQRT3*sz)/6, ypos - 0.5 * sz, xpos + (SQRT3*sz)/6, ypos + 0.5 * sz)
 
     def draw_hexagon(self, xpos, ypos, sz, theta):
         """
@@ -73,9 +74,9 @@ class Alhambra(Sketch):
         # Set the three initial triangle points, thereafter calculate mid points, and
         # quarter points. Then adjust the bezier curve control points.
         pts = []
-        pts.append(TPoint(x0, y0 + sz/sqrt(3)))               # A (A, B and C are the triangle points)
-        pts.append(TPoint(x0 - 0.5 * sz, y0 - (sqrt(3)*sz)/6))# B
-        pts.append(TPoint(x0 + 0.5 * sz, y0 - (sqrt(3)*sz)/6))# C
+        pts.append(TPoint(x0, y0 + sz/SQRT3))               # A (A, B and C are the triangle points)
+        pts.append(TPoint(x0 - 0.5 * sz, y0 - (SQRT3*sz)/6))# B
+        pts.append(TPoint(x0 + 0.5 * sz, y0 - (SQRT3*sz)/6))# C
         pts.append(pts[0].mid_point(pts[1]))                        # Ab (Ab, Bc and Ca are the triangle mid points)
         pts.append(pts[1].mid_point(pts[2]))                        # Bc
         pts.append(pts[0].mid_point(pts[2]))                        # Ca
