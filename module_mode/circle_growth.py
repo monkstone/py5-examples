@@ -18,6 +18,7 @@ def settings():
 
 def setup():
     global physics, a, z
+    sketch_title('Circle Growth')
     a = [(0, 1), (0, 2), (1, 2)] #starting axiom
     z = max(sum(a,()))+1 #total number of edges AND the id of the next node to add
     # Instantiate Verlet Physics + set drag
@@ -76,4 +77,8 @@ def draw():
     #Draw springs
     for s in physics.springs:
         py5.line(s.a.x(), s.a.y(), s.b.x(), s.b.y())
+
+def sketch_title(title):
+    py5.get_surface().set_title(title)
+
 py5.run_sketch()
