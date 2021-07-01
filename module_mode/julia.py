@@ -5,7 +5,8 @@ def settings():
     py5.size(480, 320)
 
 def setup():
-    s = 300  # Scale.
+    sketch_title('Julia Set')
+    s = py5.width  # Scale.
     n = py5.width
     m = py5.height
     x = np.linspace(-n / s, n / s, num=n).reshape((1, n))
@@ -14,11 +15,14 @@ def setup():
 
     C = np.full((m, n), -0.4 + 0.6j)
     M = np.full((m, n), True, dtype=bool)
-    N = np.zeros((m, n))
-    for i in range(255):
+    N = np.zeros((m, n, 3), dtype=np.uint8)
+    for i in range(127):
         Z[M] = Z[M] * Z[M] + C[M]
         M[np.abs(Z) > 2] = False
-        N[M] = i
-    py5.set_np_pixels(N, bands='L')
+        N[M] = [i * 2, 0, 0]
+    py5.set_np_pixels(N, bands='RGB')
+
+def sketch_title(title):
+    py5.get_surface().set_title(title)
 
 py5.run_sketch()
