@@ -37,7 +37,7 @@ def render(production):
     repeat = 1
     for val in production:
         if val == 'F':
-            turtle = __draw_line(turtle, 30)
+            turtle = __draw_line(turtle, 20)
         elif val == '+':
             turtle[ANGLE] += DELTA * repeat
             repeat = 1
@@ -69,6 +69,12 @@ def __draw_line(turtle, length):
     py5.line(turtle[XPOS], turtle[YPOS], turtlecopy[XPOS], turtlecopy[YPOS])
     return turtlecopy
 
+def add_text():
+    my_font = py5.create_font('FreeSans', 18)
+    py5.fill(0, 0, 200)
+    py5.text_font(my_font, 18)
+    py5.text("Penrose Tiling", 300, 50)
+    py5.text(grammar.rule_text(AXIOM, RULES), 100, 650)
 
 def settings():
     py5.size(700, 900)
@@ -77,11 +83,13 @@ def setup():
     sketch_title('LSystems Penrose')
     py5.background(255)
     production = grammar.repeat(5, AXIOM, RULES)
+    add_text()
     py5.stroke_weight(2)
-    py5.translate(py5.width / 2, py5.height /  2)
+    py5.translate(py5.width / 2, py5.height * 0.4)
     render(production)
 
 def sketch_title(title):
     py5.get_surface().set_title(title)
+
 
 py5.run_sketch()

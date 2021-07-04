@@ -82,7 +82,7 @@ def __testWeighting(rules, key, total):
     for key2 in keyList:
         print("%-10s %d" % (key2, freqD2[key2]))
 
-def toRuleString(axiom, rules):
+def rule_text(axiom, rules):
     """
     Creates a string representing the pythonic rules in a more conventional
     manner
