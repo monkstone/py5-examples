@@ -2,7 +2,6 @@
 ### doc --> https://www.wolframphysics.org/universes/wm148/ ###
 ### explanation --> https://www.wolframphysics.org/technical-introduction/basic-form-of-models/first-example-of-a-rule/index.html ###
 
-import py5_tools
 import py5
 VerletPhysics2D = py5.JClass('toxi.physics2d.VerletPhysics2D')
 VerletParticle2D = py5.JClass('toxi.physics2d.VerletParticle2D')
@@ -11,6 +10,7 @@ AttractionBehavior2D = py5.JClass('toxi.physics2d.behaviors.AttractionBehavior2D
 Vec2D = py5.JClass('toxi.geom.Vec2D')
 #from py5 import Sketch
 from collections import defaultdict
+import numpy as np
 
 W, H = 1000, 600 #dimensions of canvas
 
@@ -20,7 +20,7 @@ def settings():
 def setup():
     global physics, a, sw
     x, y, z = 0, 1, 2
-    a = [(x, y)] #starting axiom
+    a = np.array([x, y]) #starting axiom
     sw = []
     # Instantiate Verlet Physics + set drag
     physics = VerletPhysics2D()
