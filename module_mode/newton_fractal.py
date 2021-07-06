@@ -1,9 +1,9 @@
+import py5
 import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.colors import ListedColormap
 
-# A list of colors to distinguish the roots.
-colors = ['b', 'r', 'g', 'y']
+def settings():
+    py5.size(500, 500)
+
 
 TOL = 1.e-8
 
@@ -23,7 +23,7 @@ def newton(z0, f, fprime, MAX_IT=1000):
         z -= dz
     return False
 
-def plot_newton_fractal(f, fprime, n=200, domain=(-1, 1, -1, 1)):
+def newton_fractal(f, fprime, n=200, domain=(-1, 1, -1, 1)):
     """Plot a Newton Fractal by finding the roots of f(z).
 
     The domain used for the fractal image is the region of the complex plane
@@ -33,7 +33,7 @@ def plot_newton_fractal(f, fprime, n=200, domain=(-1, 1, -1, 1)):
     """
 
     roots = []
-    m = np.zeros((n, n))
+    m = np.full((n, n, 3), [0, 0, 0], dtype=np.uint8)
 
     def get_root_index(roots, r):
         """Get the index of r in the list roots.
@@ -54,20 +54,14 @@ def plot_newton_fractal(f, fprime, n=200, domain=(-1, 1, -1, 1)):
             z0 = x + y*1j
             r = newton(z0, f, fprime)
             if r is not False:
-                ir = get_root_index(roots, r)
-                m[iy, ix] = ir
-    nroots = len(roots)
-    if nroots > len(colors):
-        # Use a "continuous" colormap if there are too many roots.
-        cmap = 'hsv'
-    else:
-        # Use a list of colors for the colormap: one for each root.
-        cmap = ListedColormap(colors[:nroots])
-    plt.imshow(m, cmap=cmap, origin='lower')
-    plt.axis('off')
-    plt.show()
+                #ir = get_root_index(roots, r)
+                #m[iy, ix] = [ir*255, ir*128, ir*64]
+                m[iy, ix] = [r*255, r*128, r*64]
+    return m
 
 f = lambda z: z**4 - 1
 fprime = lambda z: 4*z**3
+def setup():
+    py5.set_np_pixels(newton_fractal(f, fprime, n=500), bands='RGB')
 
-plot_newton_fractal(f, fprime, n=500)
+py5.run_sketch()
