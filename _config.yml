@@ -7,9 +7,9 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 regenerate: true
 url: "https://monkstone.github.io/py5-examples/"
 urls:
-  bugs: https://monkstone.github.io/py5-examples/issues
-  github: https://monkstone.github.io/py5-examples/
-  wiki: https://monkstone.github.io/py5-examples//wiki
+  bugs: https://monkstone.github/py5-examples/issues
+  github: https://monkstone.github/py5-examples/
+  wiki: https://monkstone.github/py5-examples//wiki
 twitter_username: monkstoneT
 github_username:  monkstone
 theme: jekyll-theme-slate
