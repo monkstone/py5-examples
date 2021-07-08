@@ -24,4 +24,4 @@ plt.imshow(pic)
 plt.show()
 ```
 
-![newton.png](assets/newton.png)
+![newton.png](../assets/newton.png)
