@@ -1,3 +1,9 @@
+---
+layout: page
+title: About
+permalink: /about/
+---
+
 ## Welcome to Monkstones Experiments with py5
 
 #### Experiments with py5 (by a rubyist)
