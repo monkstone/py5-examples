@@ -6,16 +6,19 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
 regenerate: true
 url: "https://monkstone.github.io/py5-examples/"
+urls:
+  bugs: https://monkstone.github.io/py5-examples/issues
+  github: https://monkstone.github.io/py5-examples/
+  wiki: https://monkstone.github.io/py5-examples//wiki
 twitter_username: monkstoneT
 github_username:  monkstone
 theme: jekyll-theme-slate
 syntax-highlighting:
     enabled: true
 # Build settings
-kramdown:
-  syntax_highlighter: rouge
-  input: GFM
-gems:
+# Build settings
+markdown: kramdown
+plugins:
   - jekyll-sitemap
-  - kramdown
-  - rouge
+  - jekyll-feed
+  - jekyll-seo-tag
