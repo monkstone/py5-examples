@@ -1,5 +1,14 @@
 # Site settings
 title: Experiments with py5
 email: mamba2928@yahoo.co.uk
-description: > # this means to ignore newlines until "baseurl:"
+description: >- # this means to ignore newlines until "baseurl:"
   Here I will write about my experiments with py5 and numpy.
+baseurl: "/jekyll" # the subpath of your site, e.g. /blog
+url: "/" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: monkstoneT
+github_username:  monkstone
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
