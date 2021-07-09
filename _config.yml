@@ -6,6 +6,9 @@ description: >- # this means to ignore newlines until "baseurl:"
   Here I will write about my experiments with py5 and numpy.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://monkstone.github.io/py5-examples" # the base hostname & protocol for your site, e.g. http://example.com
+urls:
+  bugs: https://github.com/monkstone/py5-examples/issues
+  github: https://github.com/monkstone/py5-examples/
 twitter_username: monkstoneT
 github_username:  monkstone
 
