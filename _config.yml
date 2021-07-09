@@ -4,12 +4,21 @@ title: Experiments with py5
 email: mamba2928@yahoo.co.uk
 description: >- # this means to ignore newlines until "baseurl:"
   Here I will write about my experiments with py5 and numpy.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://monkstone.github.io/py5-examples" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/py5-examples" # the subpath of your site, e.g. /blog
+url: "https://monkstone.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: monkstoneT
 github_username:  monkstone
 
+syntax-highlighting:
+  enabled: true
+
+sass:
+  sass_dir: _sass
+
 # Build settings
-# theme: minima
+markdown: kramdown
 plugins:
+  - jekyll-sitemap
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-relative-links
