@@ -3,4 +3,5 @@ _site
 .sass-cache
 .bundle
 .jekyll-metadata
+.jekyll-cache
 *~
