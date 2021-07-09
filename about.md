@@ -1,7 +1,7 @@
 ---
 layout: default
 title: About
-permalink: /py5-examples/about/
+permalink: ./about/
 ---
 
 ## Welcome to Monkstones Experiments with py5
