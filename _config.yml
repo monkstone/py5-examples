@@ -3,16 +3,3 @@ title: Experiments with py5
 email: mamba2928@yahoo.co.uk
 description: > # this means to ignore newlines until "baseurl:"
   Here I will write about my experiments with py5 and numpy.
-regenerate: true
-twitter_username: monkstoneT
-github_username:  monkstone
-theme: jekyll-theme-slate
-syntax-highlighting:
-    enabled: true
-# Build settings
-# Build settings
-markdown: kramdown
-plugins:
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag
