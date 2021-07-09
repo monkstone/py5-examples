@@ -3,9 +3,9 @@ title: Experiments with py5
 email: mamba2928@yahoo.co.uk
 description: > # this means to ignore newlines until "baseurl:"
   Here I will write about my experiments with py5 and numpy.
-baseurl: "py5-examples" # the subpath of your site, e.g. /blog/
+baseurl: "" # the subpath of your site, e.g. /blog/
 regenerate: true
-url: "https://monkstone.github.io/py5-examples/"
+url: "https://monkstone.github.io/py5-examples"
 urls:
   bugs: https://monkstone.github/py5-examples/issues
   github: https://monkstone.github/py5-examples/
