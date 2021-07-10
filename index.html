@@ -1,23 +1,6 @@
 ---
 layout: default
+title: Home
 ---
 
-<div class="home">
-
-  <h1 class="page-heading">Articles</h1>
-   {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a>
-
-</div>
+<h1>{{ "Welcome to my blog about py5 and numpy" }}</h1>

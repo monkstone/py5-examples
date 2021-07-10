@@ -1,20 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-  {% include head.html %}
-
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+  </head>
   <body>
-
-    {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
-
-    {% include footer.html %}
-
+    {% include navigation.html %}
+    {{ content }}
   </body>
-
 </html>
