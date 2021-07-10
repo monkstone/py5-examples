@@ -6,9 +6,9 @@
 </head>
 <body>
   <nav>
-    <a href="{{ 'index.html' | relative_url }}">Home</a>
-    <a href="{{ 'about.html' | relative_url }}">About</a>
-    <a href="{{ 'blog.html' | relative_url }}">Blog</a>
+    <a href="{{ '/index.html' | prepend: site.baseurl | prepend: site.url }}">Home</a>
+    <a href="{{ '/about.html' | prepend: site.baseurl | prepend: site.url }}">About</a>
+    <a href="{{ '/blog.html' | prepend: site.baseurl | prepend: site.url }}">Blog</a>
   </nav>
 
   <h2 id="welcome-to-monkstones-experiments-with-py5">Welcome to Monkstones Experiments with py5</h2>
