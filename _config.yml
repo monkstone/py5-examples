@@ -11,7 +11,6 @@ urls:
   github: https://github.com/monkstone/py5-examples/
 twitter_username: monkstoneT
 github_username:  monkstone
-permalink: /:about
 
 syntax-highlighting:
   enabled: true
