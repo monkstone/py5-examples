@@ -1,15 +1,7 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>About</title>
-</head>
-<body>
-  <nav>
-    <a href="{{ '/index.html' | prepend: site.baseurl | prepend: site.url }}">Home</a>
-    <a href="{{ '/about.html' | prepend: site.baseurl | prepend: site.url }}">About</a>
-    <a href="{{ '/blog.html' | prepend: site.baseurl | prepend: site.url }}">Blog</a>
-  </nav>
+---
+layout: default
+title: About
+---
 
   <h2 id="welcome-to-monkstones-experiments-with-py5">Welcome to Monkstones Experiments with py5</h2>
 
@@ -22,7 +14,3 @@
   <p>But I hope that my experience with <a href="https://github.com/monkstone/pyprocessing-experiments">pyprocessing</a>, <a href="https://github.com/monkstone/processing.py-examples">processing.py</a> and as developer of <a href="https://ruby-processing.github.io/">ruby-processing projects</a> may give useful insights.</p>
 
   <p><a href="https://github.com/monkstone/pyprocessing-experiments">Pyprocessing</a> is a pure python implementation of processing, based on pyglet (so includes numpy), but performance is a bit wanting. <a href="https://github.com/monkstone/processing.py-examples">Processing.py</a> is similar to JRubyArt using jython to connect to java-processing, and can be run from processing ide. JRubyArt uses jruby instead of jython to connect to java-processing (but no longer relies on vanilla-processing). Although py5 uses some processing java code, it is a more sophisticated animal than its predecessors. Key points are that you should think python first, so for example it does not support PVector, for matrix and vector operations you should use numpy (its fast and powerful).</p>
-
-
-</body>
-</html>
