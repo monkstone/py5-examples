@@ -13,7 +13,7 @@ urls:
   wiki: https://github.com/monkstone/py5-examples/wiki
 twitter_username: monkstoneT
 github_username:  monkstone
-
+theme: minima
 syntax-highlighting:
   enabled: true
 
