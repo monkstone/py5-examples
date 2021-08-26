@@ -10,7 +10,9 @@ def settings():
 def setup():
     global unoise
     sketch_title('Uniform Noise Test')
-    py5.noise_detail(OCTAVES)
+    # the following are default values
+    # py5.noise_mode(py5.PERLIN_NOISE)
+    # py5.noise_detail(octaves=4, persistence=0.5, lacunarity=2.0)
     py5.load_pixels()
     unoise = UniformNoise()
 
