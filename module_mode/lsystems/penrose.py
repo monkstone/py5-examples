@@ -2,7 +2,6 @@ import py5
 from math import cos, pi, sin, sqrt, radians
 from grammar import grammar
 from collections import namedtuple
-import textwrap
 
 """
 penrose.py processing sketch by Martin Prout, but uses LSystem rules from a Fractint sketch
