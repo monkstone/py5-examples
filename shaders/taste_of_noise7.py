@@ -15,8 +15,8 @@ def setup():
     mouse_dragged = False
     mouse_click_state = 0.0
     last_mouse_position = vec2d.Vec2D(py5.mouse_x, py5.mouse_y)
-    wrapper = py5.load_shader('data/taste_of_noise7.glsl')
-    img = py5.load_shader('data/image.glsl')
+    wrapper = py5.load_shader('shaders/data/taste_of_noise7.glsl')
+    img = py5.load_shader('shaders/data/image.glsl')
     # Assume the dimension of the window will not change over time
     wrapper.set('iResolution', py5.width, py5.height, 0.0)
     start = py5.millis()
@@ -35,8 +35,6 @@ def draw():
         mouse_click_state = 0.0
 
     wrapper.set('iMouse', last_mouse_position.x, last_mouse_position.y, mouse_click_state, mouse_click_state)
-    # This uniform is undocumented so I have no idea what the range is
-    wrapper.set('iFrameRate', py5.get_frame_rate())
     py5.shader(wrapper)
     # Draw the output of the shader onto a rectangle that covers the whole viewport.
     py5.rect(0, 0, py5.width, py5.height)
