@@ -90,13 +90,12 @@ def draw_rod(distance):
     angle = 0
     angle_increment = pi * 2 / sides
     py5.translate(0, 0, -distance / 2.0)
-    py5.begin_shape(py5.QUAD_STRIP)
-    for i in range(sides+1):
-        py5.normal(cos(angle), sin(angle), 0)
-        py5.vertex(radius*cos(angle), radius*sin(angle), -distance/2)
-        py5.vertex(radius*cos(angle), radius*sin(angle), distance/2,)
-        angle += angle_increment
-    py5.end_shape()
+    with py5.begin_shape(py5.QUAD_STRIP):
+        for i in range(sides+1):
+            py5.normal(cos(angle), sin(angle), 0)
+            py5.vertex(radius*cos(angle), radius*sin(angle), -distance/2)
+            py5.vertex(radius*cos(angle), radius*sin(angle), distance/2,)
+            angle += angle_increment
     py5.translate(0, 0, -distance/2)
     py5.sphere(radius)
 
@@ -127,10 +126,9 @@ def draw():
     py5.background(10, 10, 200)
     define_lights()
     py5.sphere_detail(11)
-    py5.push_matrix()
-    py5.translate( distance * adjustment[depth], -distance * adjustment[depth], distance * adjustment[depth])
-    render(production)
-    py5.pop_matrix()
+    with py5.push_matrix():
+        py5.translate( distance * adjustment[depth], -distance * adjustment[depth], distance * adjustment[depth])
+        render(production)
 
 def key_pressed():
     '''
